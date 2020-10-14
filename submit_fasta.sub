@@ -1,0 +1,17 @@
+#PBS -N Cri
+#PBS -j eo
+#PBS -e /var/www/html/conserv/results/$random/conserv.err
+#PBS -q batch
+#PBS -l nodes=1:ppn=4
+# This jobs working directory is set below
+
+echo Running on host `hostname`
+echo Time is `date`
+
+cd /scratch/working/$random
+echo Working directory is `pwd`
+touch /scratch/working/$random/made_it
+
+# run the job
+/var/www/html/conserv/scripts/conserv_home.sh input.fasta
+cp /scratch/working/$random/* /var/www/html/conserv/results/$random/.
