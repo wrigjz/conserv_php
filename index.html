@@ -4,7 +4,7 @@
     <!-- saved from url=(0030)http://192.168.15.106/dnasite/ -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Conserv</title>
-    <meta content="Yao-Chi Chen, Jon Wright and Carmay Lim" name="author">
+    <meta content="Jon Wright and Carmay Lim" name="author">
     <meta content="Webpage interface to the Conserv residue prediction server"
       name="description">
     <meta content="Conserv -  Residue Conservation server" name="keywords">
@@ -14,14 +14,17 @@
       <center> <img src="images/as-en_07.gif" alt="Academia Sinica Logo"></center>
     </div>
     <h1 style="text-align: center;">Conserv, The residue conservation server</h1>
-    <h2 style="text-align: center;"> Jon Wright<sup>1</sup>, Yao-Chi Chen<sup>1</sup>, Chen Yu-Hsien<sup>2</sup> and Carmay Lim<sup>1,2</sup></h2>
+    <h2 style="text-align: center;"> Jon Wright<sup>1</sup> and Carmay Lim<sup>1,2</sup></h2>
     <h3 style="text-align: center;"> <sup>1</sup>Institute of
       Biomedical Sciences, Academia Sinica, Taipei, Taiwan<br>
         <sup>2</sup>Department of Chemistry, National TsingHua University,
           HsinChu, Taiwan </h3>
     <p>This server can be used to obtain conservation values (similar to ConSurf) for residues in a single protein chain.
       The method it uses is based on the ConSurf method but is a completely new implimentation</a>.
-      For your target protein provide either a single chain PDB file or give the 4 letter PDB code and the chain ID that you would like a prediction for.  (Note: Currently we are taking only single chain PDB structures).</p>
+      For your target protein provide either a single chain PDB file or the 4 letter PDB code and the chain ID or a fasta format sequence that you would like the conservation results for. (Note: Currently we are taking only single chain PDB structures).</p>
+    <p>An example of the results for the 1CRN pdb entry chain A can be found on this <a href="examples/1crna">page</a>.
+    <p>A point to note is that the conservation value is for the position not the actual residue, so for instance if you have a chain where it is a particular residue most of the time (e.g. Asp281 in 99% of cases) and you provide a chain where the 281 is a Glu then the returned conservation score will be a 9 because a residue, the Asp, is highly conserved at that position even if in your own submitted chain it was something different.</p>
+    <p>The conservation is returned on a scale of 1-9, where 1 is very variable and 9 is highly conserved.</p>
     <hr style="border-style: solid; color: black;">
 
 <form action="scripts/upload.php" method="post" enctype="multipart/form-data">
@@ -46,7 +49,7 @@
 </form>
 
 <hr style="border-style: solid; color: black;">
-<p>Conserv was created by Jon D. Wright, Chen Yao-Chi, Chen Yu-Hsien and Carmay Lim and is hosted in the Institute of BioMedical Sciences, Academia Sinica, Taipei, Taiwan.</p>
+<p>Conserv was created by Jon D. Wright and Carmay Lim and is hosted in the Institute of BioMedical Sciences, Academia Sinica, Taipei, Taiwan.</p>
 <p>Code that this server uses can be obtained from github as wrigjz/conservation_python.
 <hr style="border-style: solid; color: black;">
    <a href="https://conserv.limlab.dnsalias.org">Conserv</a> is hosted at <a href="http://www.ibms.sinica.edu.tw">The Institute of Biomedical Sciences</a>, <a href="http://www.sinica.edu.tw">Academia Sinica</a>, Taipei 11529, Taiwan.
