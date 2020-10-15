@@ -82,7 +82,7 @@ function status() {
 # The function for if a job is missing or failed
 function failed($jobid) {
     echo "<head>";
-    echo "<title>::: Failed at the Conserv prediction server :::</title>";
+    echo "<title>::: Failed at the Conserv server :::</title>";
     echo "<meta charset=\"utf-8\">";
     echo "</head>";
     echo "<body BGCOLOR=\"#FFFFFF\">";
@@ -111,7 +111,7 @@ function queuedup($jobid) {
     echo "<center> <img src=\"../../images/as-en_07.gif\" alt=\"Academia Sinica Logo\">";
     echo "<h2>Welcome to Conserv, the conservation residue server.";
     echo "</center>";
-    echo "<H2>Your job is $jobid and is currently in the queue for prediction.</H2>";
+    echo "<H2>Your job is $jobid and is currently in the queue for calculation.</H2>";
     echo "This page will be updated every minute";
     # Find queue status
     echo "<pre>Q order  Q number                  Q Name<br></pre>";
@@ -128,7 +128,7 @@ function running($jobid) {
     echo "</head>";
     echo "<body BGCOLOR=\"#FFFFFF\">";
     echo "<center> <img src=\"../../images/as-en_07.gif\" alt=\"Academia Sinica Logo\">";
-    echo "<h2>Welcome to Conserv, the conservation prediction server.";
+    echo "<h2>Welcome to Conserv, the conservation residue server.";
     echo "</center>";
     echo "<H2>Your job is $jobid and is currently running.</H2>";
     echo "This page will be updated every minute";
