@@ -152,7 +152,10 @@ function finished($jobid) {
     echo "</center>";
     # Now reate the webpage itself
     echo "Your job has finished and the results are available.<br>";
-    echo "<p>The conservation grades are <a href=\"conservation.txt\">here</a>, this also includes the frequency of each residue type at each position ";
+    echo "<p>The conservation grades can be download from <a href=\"conservation.txt\">here</a>, this also includes the frequency of each residue type at each position ";
+    echo "<pre>";
+    echo file_get_contents( "conservation.txt" ); // get the contents, and echo it out.
+    echo "</pre>";
     echo "<hr style=\"border-style: solid; color: black;\">";
     echo "<a href=\"https://conserv.limlab.dnsalias.org\">Conserv</a> is hosted at <a href=\"http://www.ibms.sinica.edu.tw\">The Institute of Biomedical Sciences</a>, <a href=\"http://www.sinica.edu.tw\">Academia Sinica</a>, Taipei 11529, Taiwan.";
     echo "<hr style=\"border-style: solid; color: black;\">";
