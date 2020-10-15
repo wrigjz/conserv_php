@@ -30,9 +30,9 @@ if ($found == true) {
     } else { # Job was not in the queue system, ideally we should never get to this line
         failed($jobid);
     }
-} elseif (filesize("results.txt") != 0) { # Check for a results.txt file, if it exists and is not zero then we have finished
+} elseif (filesize("conservation.txt") != 0) { # Check for a conservation.txt file, if it exists and is not zero then we have finished
     finished($jobid);
-} else { # IF we are here then the job is not in the queue and the results.txt file is empty so we failed!
+} else { # IF we are here then the job is not in the queue and the conservation.txt file is empty so we failed!
     failed($jobid);
 }
 
@@ -43,13 +43,6 @@ if ($found == true) {
 function status() {
     echo "Prepared input file: ";
     exec('grep "Preparing and checking the input files" error_link.txt', $out, $ret_val);
-    if ($ret_val == 0) {
-        echo "&#9745<br>";
-    } else {
-        echo "&#9744<br>";
-    }
-    echo "Started Amber Energy Decomp: ";
-    exec('grep "About to start the Amber Energy Calculation" error_link.txt', $out, $ret_val);
     if ($ret_val == 0) {
         echo "&#9745<br>";
     } else {
@@ -76,15 +69,8 @@ function status() {
     } else {
         echo "&#9744<br>";
     }
-    echo "Assembling data: ";
-    exec('grep "Grading done, consurf finished" error_link.txt', $out, $ret_val);
-    if ($ret_val == 0) {
-        echo "&#9745<br>";
-    } else {
-        echo "&#9744<br>";
-    }
-    echo "Making prediction: ";
-    exec('grep "About to start finally printing out the results" error_link.txt', $out, $ret_val);
+    echo "Calculating the final grades: ";
+    exec('grep "Running rate4site and grading the scores" error_link.txt', $out, $ret_val);
     if ($ret_val == 0) {
         echo "&#9745<br>";
     } else {
@@ -166,7 +152,7 @@ function finished($jobid) {
     echo "</center>";
     # Now reate the webpage itself
     echo "Your job has finished and the results are available.<br>";
-    echo "<p>Input pdb file is <a href=\"input.pdb\">here</a>, the conservation grades are <a href=\"frequency.txt\">here</a><br> and the conservation grades are <a href=\"cons.txt\">here</a>";
+    echo "<p>The conservation grades are <a href=\"conservation.txt\">here</a>, this also includes the frequency of each residue type at each position ";
     echo "<hr style=\"border-style: solid; color: black;\">";
     echo "<a href=\"https://conserv.limlab.dnsalias.org\">Conserv</a> is hosted at <a href=\"http://www.ibms.sinica.edu.tw\">The Institute of Biomedical Sciences</a>, <a href=\"http://www.sinica.edu.tw\">Academia Sinica</a>, Taipei 11529, Taiwan.";
     echo "<hr style=\"border-style: solid; color: black;\">";

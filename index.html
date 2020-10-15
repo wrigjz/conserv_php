@@ -37,11 +37,12 @@
   and a chain (1 char) to upload: <input type="text" name="CHAIN"> 
   <input type="submit" value="Submit PDB ID & Chain" name="submit">
 </form>
-<form action="scripts/upload_fasta.php" method="post" enctype="multipart/form-data">
-  <p> <b>Option C) For a fasta format uploaded from a file.</b><br>
-  Select .fasta file to upload:
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload File" name="submit">
+<form action="scripts/fasta.php" method="post" enctype="multipart/form-data">
+  <p> <b>Option C) For a fasta format.</b><br>
+  Please paste it into the box here, single letter codes only:<br>
+  <textarea cols="80" rows="10" name="FASTA" id="FASTA"></textarea>
+  <input type="submit" value="Submit the Fasta Sequence" name="submit">
+  </textarea>
 </form>
 
 <hr style="border-style: solid; color: black;">

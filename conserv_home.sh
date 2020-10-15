@@ -9,7 +9,7 @@
 # A simple script to replciate Consurf for a provided single chain pdb file
 # with a chain id of X, this is a post amber minimized pdb file
 
-# Usage consurf_home file.pdb
+# Usage conserv_home file.pdb
 
 echo "Starting the Consurf calculations" >> error.txt
 if [ "$#" -ne 1 ]; then
@@ -39,7 +39,7 @@ scripts=/home/programs/consurf_scripts
 
 # Remove output from previous runs
 /bin/rm -rf uniref90_list.txt prealignment.fasta postalignment.aln accepted.fasta uniref.tmp 
-/bin/rm -rf consurf_home.grades frequency.txt cons.fasta
+/bin/rm -rf conservation.txt frequency.txt cons.fasta
 /bin/rm -rf homologs.fasta r4s_pdb.py initial.grades r4s.res prottest.out cdhit.log r4s.out
 
 # Work out if we are doing a pdb file or a fasta file
@@ -206,7 +206,7 @@ echo "R4S finished time to grade now" >> error.txt
 # Turn those scores into grades
 PYTHONPATH=. python3 $scripts/r4s_to_grades.py r4s.res initial.grades
 error=$?
-paste initial.grades frequency.txt >| consurf_home.grades
+paste initial.grades frequency.txt >| conservation.txt
 error1=$?
 if [ $error -ne 0 ] || [ $error1 -ne 0 ]; then
     echo "Final consurf grades calculations failed" >> error.txt
