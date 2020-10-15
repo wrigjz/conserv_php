@@ -87,7 +87,7 @@ function failed($jobid) {
     echo "</head>";
     echo "<body BGCOLOR=\"#FFFFFF\">";
     echo "<center> <img src=\"../../images/as-en_07.gif\" alt=\"Academia Sinica Logo\">";
-    echo "<h2>Welcome to Conserv, the conservation residue server.";
+    echo "<h2>Welcome to Conserv, the residue conservation score server.";
     echo "</center>";
     echo "<H2>Job $jobid is Missing for some reason.</H2>";
     if (filesize("error.txt") != 0 || filesize("conserv.err") != 0) {
@@ -109,7 +109,7 @@ function queuedup($jobid) {
     echo "</head>";
     echo "<body BGCOLOR=\"#FFFFFF\">";
     echo "<center> <img src=\"../../images/as-en_07.gif\" alt=\"Academia Sinica Logo\">";
-    echo "<h2>Welcome to Conserv, the conservation residue server.";
+    echo "<h2>Welcome to Conserv, the residue conservation score server.";
     echo "</center>";
     echo "<H2>Your job is $jobid and is currently in the queue for calculation.</H2>";
     echo "This page will be updated every minute";
@@ -128,7 +128,7 @@ function running($jobid) {
     echo "</head>";
     echo "<body BGCOLOR=\"#FFFFFF\">";
     echo "<center> <img src=\"../../images/as-en_07.gif\" alt=\"Academia Sinica Logo\">";
-    echo "<h2>Welcome to Conserv, the conservation residue server.";
+    echo "<h2>Welcome to Conserv, the residue conservation score server.";
     echo "</center>";
     echo "<H2>Your job is $jobid and is currently running.</H2>";
     echo "This page will be updated every minute";
@@ -148,7 +148,7 @@ function finished($jobid) {
     echo "</head>";
     echo "<body BGCOLOR=\"#FFFFFF\">";
     echo "<center> <img src=\"../../images/as-en_07.gif\" alt=\"Academia Sinica Logo\">";
-    echo "<h2>Welcome to Conserv, the conservation residue server.";
+    echo "<h2>Welcome to Conserv, the residue conservation score server.";
     echo "</center>";
     # Now reate the webpage itself
     echo "Your job has finished and the results are available.<br>";
