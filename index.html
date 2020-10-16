@@ -20,7 +20,7 @@
         <sup>2</sup>Department of Chemistry, National TsingHua University,
           HsinChu, Taiwan </h3>
     <p>This server can be used to obtain conservation values (similar to ConSurf) for residues in a single protein chain.
-      The method it uses is based on the ConSurf method but is a completely new implimentation</a>.
+      The method it uses is based on the ConSurf method but is a completely new implimentation and is described on this <a href="methods_conserv.html">page</a></p>.
       For your target protein provide either a single chain PDB file or the 4 letter PDB code and the chain ID or a fasta format sequence that you would like the conservation results for. (Note: Currently we are taking only single chain PDB structures).</p>
     <p>An example of the results for the 1CRN pdb entry chain A can be found on this <a href="examples/1crna">page</a>.
     <p>A point to note is that the conservation value is for the position not the actual residue, so for instance if you have a chain where it is a particular residue most of the time (e.g. Asp281 in 99% of cases) and you provide a chain where the 281 is a Glu then the returned conservation score will be a 9 because a residue, the Asp, is highly conserved at that position even if in your own submitted chain it was something different.</p>
